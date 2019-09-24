@@ -1,0 +1,42 @@
+﻿@model sd2_mis4200_conroy.Models.courseDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>courseDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Instructor.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Instructor.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.courseDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.courseDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.coursedetailID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

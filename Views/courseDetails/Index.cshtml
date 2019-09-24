@@ -1,0 +1,45 @@
+﻿@model IEnumerable<sd2_mis4200_conroy.Models.courseDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Instructor.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.courseDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Instructor.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.courseDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.coursedetailID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.coursedetailID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.coursedetailID })
+        </td>
+    </tr>
+}
+
+</table>
