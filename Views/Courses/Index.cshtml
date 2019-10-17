@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<sd2_mis4200_conroy.Models.Course>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Courses";
 }
 
-<h2>Index</h2>
+<h2>Courses</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-striped table-bordered table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Student.firstName)
@@ -23,23 +23,26 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Student.firstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.courseDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.courseID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.courseID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.courseID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.courseDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.courseID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.courseID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.courseID })
+            </td>
+        </tr>
+    }
 
 </table>
+<span class="glyphicon glyciphon-home"><</span>
+<a class="btn btn-primary" @Html.ActionLink("Home", "Index", "Home")</a>
